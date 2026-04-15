@@ -76,7 +76,7 @@ export default function Question1() {
       setShowAnswer(false);
     } else {
       // Переход на страницу RoundEnd и передача счета
-      navigate('/roundend', { state: { score } });
+      navigate('/roundend', { state: { score, round: 1  }});
     }
   };
 

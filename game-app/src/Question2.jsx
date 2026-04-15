@@ -82,7 +82,7 @@ export default function Question2() {
       setWinner(null);
       setShowAnswer(false);
     } else {
-      navigate('/roundend', { state: { score } });
+      navigate('/roundend', { state: { score, round:2 } });
     }
   };
 

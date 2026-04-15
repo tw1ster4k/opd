@@ -5,10 +5,18 @@ export default function RoundEnd() {
   const navigate = useNavigate();
   const location = useLocation();
   const score = location.state?.score || { red: 0, blue: 0 };
+  const round = location.state?.round || 1; // какой раунд завершился
+
   const { red, blue } = score;
 
   const handleNextRound = () => {
-    navigate('/round2');
+    if (round === 1) {
+      navigate('/round2', { state: { score } });
+    } else if (round === 2) {
+      navigate('/round3', { state: { score } });
+    } else {
+      navigate('/'); // можно потом сделать финальный экран
+    }
   };
 
   // Рассчет высот колонок
@@ -19,11 +27,11 @@ export default function RoundEnd() {
   if (red > blue) {
     redHeight = 180;
     blueHeight = 120;
-    winnerText = '🔴 Красные впереди!';
+    winnerText = '🔴 Красные победили!';
   } else if (blue > red) {
     blueHeight = 180;
     redHeight = 120;
-    winnerText = '🔵 Синие впереди!';
+    winnerText = '🔵 Синие победили!';
   } else {
     redHeight = 150;
     blueHeight = 150;
@@ -59,8 +67,20 @@ export default function RoundEnd() {
         </div>
       </div>
 
-      <button onClick={handleNextRound} style={{ marginTop: 50, fontSize: 24, padding: '12px 28px', borderRadius: 12, background: 'linear-gradient(135deg, #ff512f, #dd2476)', border: 'none', color: 'white', cursor: 'pointer' }}>
-        Перейти ко второму раунду
+      <button
+        onClick={handleNextRound}
+        style={{
+          marginTop: 50,
+          fontSize: 24,
+          padding: '12px 28px',
+          borderRadius: 12,
+          background: 'linear-gradient(135deg, #ff512f, #dd2476)',
+          border: 'none',
+          color: 'white',
+          cursor: 'pointer'
+        }}
+      >
+        {round === 1 ? 'Перейти ко 2 раунду' : round === 2 ? 'Перейти к 3 раунду' : 'В меню'}
       </button>
     </div>
   );
