@@ -1,5 +1,5 @@
 // ================= App.jsx =================
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import GameMenu from "./GameMenu";
 import Question1 from "./Question1";
 import Question2 from "./Question2";
