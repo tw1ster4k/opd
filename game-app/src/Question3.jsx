@@ -91,7 +91,7 @@ export default function Question3() {
       setWinner(null);
       setShowAnswer(false);
     } else {
-      navigate('/roundend', { state: { score } });
+      navigate('/final', { state: { score } });
     }
   };
 
