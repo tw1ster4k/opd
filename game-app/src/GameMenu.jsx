@@ -41,9 +41,11 @@ export default function GameMenu() {
           {blueTeam.map((p, i) => <div key={i} style={{ marginTop: 6 }}>{p}</div>)}
         </div>
       </div>
-
       <button onClick={() => navigate('/round1')} style={{ padding: '14px 28px', fontSize: 18, borderRadius: 12, background: 'linear-gradient(135deg, #ff512f, #dd2476)', color: 'white', border: 'none', cursor: 'pointer' }}>
         🚀 Начать игру
+      </button>
+      <button onClick={() => navigate("/programm")} style={{ padding: '14px 28px', fontSize: 18, borderRadius: 12, background: 'linear-gradient(135deg, blue, purple)', color: 'white', border: 'none', cursor: 'pointer' }}>
+        О программе
       </button>
     </div>
   );

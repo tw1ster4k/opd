@@ -9,6 +9,7 @@ import RoundIntro2 from "./RoundIntro2";
 import RoundIntro3 from "./RoundIntro3";
 import RoundEnd from "./RoundEnd";
 import FinalScreen from "./FinalScreen";
+import Programm from "./Programm";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/game/question3" element={<Question3 />} />
         <Route path="/roundend" element={<RoundEnd />} />
         <Route path="/final" element={<FinalScreen />} />
+        <Route path="/programm" element={<Programm />} />
       </Routes>
     </Router>
   );
